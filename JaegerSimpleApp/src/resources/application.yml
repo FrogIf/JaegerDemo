@@ -1,0 +1,9 @@
+server:
+  port: 9092
+spring:
+  application:
+    name: JaegerSimpleApp
+
+jaeger:
+  agent-host: localhost
+  agent-port: 6831
