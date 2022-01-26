@@ -1,0 +1,35 @@
+server:
+  port: 9090
+  context: /
+
+spring:
+  application:
+    name: AppA
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:data.d
+    username: 
+    password: 
+  jpa:
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+frog:
+  app-b:
+    address: http://localhost:9091
+
+
+opentracing:
+  jaeger:
+    enabled: true
+    log-spans: true
+    udp-sender:
+      host: 127.0.0.1
+      port: 6831
+    tags:
+      frog-tag: 1234
+    remote-reporter:
+      flush-interval: 1000
+      max-queue-size: 1000

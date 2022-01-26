@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: AppB
+
+server:
+  port: 9091
+  context: /
+
+opentracing:
+  jaeger:
+    enabled: true
+    log-spans: true
+    udp-sender:
+      host: 127.0.0.1
+      port: 6831
+    tags:
+      frog-tag: 1234
+    remote-reporter:
+      flush-interval: 1000
+      max-queue-size: 1000
